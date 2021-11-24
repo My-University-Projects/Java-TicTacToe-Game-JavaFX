@@ -1,0 +1,11 @@
+pl\polsl\tomasz\krypczyk\tictactoe\game\model\WinningConditions.class
+pl\polsl\tomasz\krypczyk\tictactoe\game\model\GameStatus.class
+pll\polsl\krypczyk\exceptions\TooLongNameException.class
+pl\polsl\tomasz\krypczyk\tictactoe\game\model\ComputerPlayer.class
+pl\polsl\tomasz\krypczyk\tictactoe\game\controller\ProgramFlowController.class
+pl\polsl\tomasz\krypczyk\tictactoe\game\view\View.class
+pl\polsl\tomasz\krypczyk\tictactoe\main\TicTacToeGame.class
+pl\polsl\tomasz\krypczyk\tictactoe\game\controller\Controller.class
+pl\polsl\tomasz\krypczyk\tictactoe\game\model\Board.class
+pl\polsl\tomasz\krypczyk\tictactoe\game\model\HumanPlayer.class
+pl\polsl\tomasz\krypczyk\tictactoe\game\model\Player.class
