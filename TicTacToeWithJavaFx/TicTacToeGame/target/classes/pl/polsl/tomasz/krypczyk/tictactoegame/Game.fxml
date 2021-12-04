@@ -1,0 +1,191 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.text.Font?>
+
+<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="600.0" prefWidth="800.0" style="-fx-background-color: grey; -fx-border-color: black; -fx-border-width: 8;" xmlns="http://javafx.com/javafx/17" xmlns:fx="http://javafx.com/fxml/1" fx:controller="pl.polsl.tomasz.krypczyk.tictactoegame.GameController">
+   <children>
+      <ImageView fitHeight="300.0" fitWidth="400.0" layoutX="196.0" layoutY="300.0" opacity="0.02" pickOnBounds="true" preserveRatio="true">
+         <image>
+            <Image url="@MainMenuBackground.jpg" />
+         </image>
+      </ImageView>
+      <ImageView fitHeight="300.0" fitWidth="400.0" layoutX="-104.0" layoutY="300.0" opacity="0.02" pickOnBounds="true" preserveRatio="true">
+         <image>
+            <Image url="@MainMenuBackground.jpg" />
+         </image>
+      </ImageView>
+      <ImageView fitHeight="300.0" fitWidth="400.0" layoutX="-104.0" opacity="0.02" pickOnBounds="true" preserveRatio="true">
+         <image>
+            <Image url="@MainMenuBackground.jpg" />
+         </image>
+      </ImageView>
+      <ImageView fitHeight="300.0" fitWidth="400.0" layoutX="496.0" opacity="0.02" pickOnBounds="true" preserveRatio="true">
+         <image>
+            <Image url="@MainMenuBackground.jpg" />
+         </image>
+      </ImageView>
+      <ImageView fitHeight="300.0" fitWidth="400.0" layoutX="196.0" opacity="0.02" pickOnBounds="true" preserveRatio="true">
+         <image>
+            <Image url="@MainMenuBackground.jpg" />
+         </image>
+      </ImageView>
+      <ImageView fitHeight="300.0" fitWidth="400.0" layoutX="496.0" layoutY="300.0" opacity="0.02" pickOnBounds="true" preserveRatio="true">
+         <image>
+            <Image url="@MainMenuBackground.jpg" />
+         </image>
+      </ImageView>
+      <AnchorPane layoutX="33.0" layoutY="105.0" prefHeight="336.0" prefWidth="295.0" style="-fx-background-color: lightgrey; -fx-border-color: black; -fx-border-width: 8;">
+         <children>
+            <Button fx:id="button2" defaultButton="true" layoutX="105.0" layoutY="17.0" mnemonicParsing="false" onAction="#button2Clicked" prefHeight="101.0" prefWidth="91.0" stylesheets="@styles/Style.css">
+               <font>
+                  <Font name="Maiandra GD" size="35.0" />
+               </font>
+            </Button>
+            <Button fx:id="button1" defaultButton="true" layoutX="14.0" layoutY="17.0" mnemonicParsing="false" onAction="#button1Clicked" prefHeight="101.0" prefWidth="91.0" stylesheets="@styles/Style.css">
+               <font>
+                  <Font name="Maiandra GD" size="35.0" />
+               </font>
+            </Button>
+            <Button fx:id="button4" defaultButton="true" layoutX="14.0" layoutY="115.0" mnemonicParsing="false" onAction="#button4Clicked" prefHeight="101.0" prefWidth="91.0" stylesheets="@styles/Style.css">
+               <font>
+                  <Font name="Maiandra GD" size="35.0" />
+               </font>
+            </Button>
+            <Button fx:id="button7" layoutX="14.0" layoutY="212.0" mnemonicParsing="false" onAction="#button7Clicked" prefHeight="101.0" prefWidth="91.0" stylesheets="@styles/Style.css">
+               <font>
+                  <Font name="Maiandra GD" size="35.0" />
+               </font>
+            </Button>
+            <Button fx:id="button8" layoutX="105.0" layoutY="212.0" mnemonicParsing="false" onAction="#button8Clicked" prefHeight="101.0" prefWidth="91.0" stylesheets="@styles/Style.css">
+               <font>
+                  <Font name="Maiandra GD" size="35.0" />
+               </font>
+            </Button>
+            <Button fx:id="button9" defaultButton="true" layoutX="196.0" layoutY="212.0" mnemonicParsing="false" onAction="#button9Clicked" prefHeight="101.0" prefWidth="91.0" stylesheets="@styles/Style.css">
+               <font>
+                  <Font name="Maiandra GD" size="35.0" />
+               </font>
+            </Button>
+            <Button fx:id="button5" defaultButton="true" layoutX="105.0" layoutY="115.0" mnemonicParsing="false" onAction="#button5Clicked" prefHeight="101.0" prefWidth="91.0" stylesheets="@styles/Style.css">
+               <font>
+                  <Font name="Maiandra GD" size="35.0" />
+               </font>
+            </Button>
+            <Button fx:id="button6" defaultButton="true" layoutX="196.0" layoutY="115.0" mnemonicParsing="false" onAction="#button6Clicked" prefHeight="101.0" prefWidth="91.0" stylesheets="@styles/Style.css">
+               <font>
+                  <Font name="Maiandra GD" size="35.0" />
+               </font>
+            </Button>
+            <Button fx:id="button3" defaultButton="true" layoutX="196.0" layoutY="17.0" mnemonicParsing="false" onAction="#button3Clicked" prefHeight="101.0" prefWidth="91.0" stylesheets="@styles/Style.css">
+               <font>
+                  <Font name="Maiandra GD" size="35.0" />
+               </font>
+            </Button>
+         </children>
+      </AnchorPane>
+      <Label layoutX="175.0" layoutY="15.0" text="Aktualny gracz:">
+         <font>
+            <Font name="Maiandra GD" size="48.0" />
+         </font>
+      </Label>
+      <Label fx:id="currentPlayerLabel" layoutX="513.0" layoutY="14.0" text="gracz">
+         <font>
+            <Font name="Maiandra GD" size="50.0" />
+         </font>
+      </Label>
+      <Label layoutX="478.0" layoutY="105.0" text="Runda:">
+         <font>
+            <Font name="Maiandra GD" size="48.0" />
+         </font>
+      </Label>
+      <Label fx:id="roundCountLabel" layoutX="640.0" layoutY="105.0" text="1">
+         <font>
+            <Font name="Maiandra GD" size="48.0" />
+         </font>
+      </Label>
+      <Label layoutX="498.0" layoutY="199.0" text="Wynik">
+         <font>
+            <Font name="Maiandra GD" size="48.0" />
+         </font>
+      </Label>
+      <Label fx:id="player1Label" layoutX="460.0" layoutY="264.0" text="gracz1 - ">
+         <font>
+            <Font name="Maiandra GD" size="50.0" />
+         </font>
+      </Label>
+      <Label fx:id="player2Label" layoutX="460.0" layoutY="347.0" text="gracz2 - ">
+         <font>
+            <Font name="Maiandra GD" size="50.0" />
+         </font>
+      </Label>
+      <Label fx:id="player1WinsCountLabel" layoutX="637.0" layoutY="264.0" text="0">
+         <font>
+            <Font name="Maiandra GD" size="50.0" />
+         </font>
+      </Label>
+      <Label fx:id="player2WinsCountLabel" layoutX="643.0" layoutY="347.0" text="0">
+         <font>
+            <Font name="Maiandra GD" size="50.0" />
+         </font>
+      </Label>
+      <AnchorPane fx:id="errorAnchorPane" layoutX="8.0" layoutY="452.0" prefHeight="148.0" prefWidth="788.0" style="-fx-border-color: black; -fx-background-color: lightgray; -fx-border-width: 8;" visible="false">
+         <children>
+            <Label layoutX="53.0" layoutY="35.0" text="!!" textFill="RED">
+               <font>
+                  <Font name="Maiandra GD" size="56.0" />
+               </font>
+            </Label>
+            <Label layoutX="694.0" layoutY="34.0" text="!!" textFill="RED">
+               <font>
+                  <Font name="Maiandra GD" size="56.0" />
+               </font>
+            </Label>
+            <Label fx:id="errorMessageLabel" layoutX="134.0" layoutY="43.0" prefHeight="30.0" prefWidth="528.0">
+               <font>
+                  <Font name="Maiandra GD" size="25.0" />
+               </font>
+            </Label>
+            <Button layoutX="343.0" layoutY="97.0" mnemonicParsing="false" onAction="#errorMessageButtonClicked" prefHeight="34.0" prefWidth="81.0" style="-fx-border-radius: 50; -fx-background-radius: 55;" stylesheets="@styles/Style.css" text="Ok" />
+         </children>
+      </AnchorPane>
+      <AnchorPane fx:id="endGameAnchorPane" layoutX="4.0" layoutY="6.0" prefHeight="591.0" prefWidth="788.0" style="-fx-background-color: lightblue;" visible="false">
+         <children>
+            <ImageView fitHeight="591.0" fitWidth="788.0" layoutX="-1.0" layoutY="-4.0" opacity="0.15" pickOnBounds="true" preserveRatio="true">
+               <image>
+                  <Image url="@winnergraphic.jpg" />
+               </image>
+            </ImageView>
+            <Label layoutX="157.0" layoutY="23.0" text="Koniec gry!">
+               <font>
+                  <Font name="Maiandra GD" size="96.0" />
+               </font>
+            </Label>
+            <Label fx:id="endGameMessageLabel" layoutX="240.0" layoutY="170.0" text="wygrał gracz!" textAlignment="CENTER">
+               <font>
+                  <Font name="Maiandra GD" size="53.0" />
+               </font>
+            </Label>
+            <Label layoutX="281.0" layoutY="296.0" text="Rewanż?">
+               <font>
+                  <Font name="Maiandra GD" size="58.0" />
+               </font>
+            </Label>
+            <Button layoutX="248.0" layoutY="407.0" mnemonicParsing="false" onAction="#nextGameButtonClicked" prefHeight="71.0" prefWidth="112.0" style="-fx-background-radius: 50; -fx-border-radius: 50;" stylesheets="@styles/Style.css" text="Tak">
+               <font>
+                  <Font name="Maiandra GD" size="25.0" />
+               </font>
+            </Button>
+            <Button layoutX="409.0" layoutY="407.0" mnemonicParsing="false" onAction="#backToMenuButtonClicked" prefHeight="71.0" prefWidth="112.0" style="-fx-background-radius: 50; -fx-border-radius: 50;" stylesheets="@styles/Style.css" text="Nie">
+               <font>
+                  <Font name="Maiandra GD" size="25.0" />
+               </font>
+            </Button>
+         </children>
+      </AnchorPane>
+   </children>
+</AnchorPane>
