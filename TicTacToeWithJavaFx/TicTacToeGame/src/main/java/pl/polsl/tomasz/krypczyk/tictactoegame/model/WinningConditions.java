@@ -52,9 +52,20 @@ public class WinningConditions {
         return this.winningPositions;
     }
     
-    /*public void clearWinningPositions(){
-        this.winningPositions.stream()
-        .filter(g -> g.isEmpty())
-        .forEach(g -> g.clear());
-    }*/
+    /**
+     * checkWinConditions checks that actual player sign positions are winning
+     * positions
+     * @param player actual player
+     * @return boolean if positions of actual player meet the winning conditions
+     */
+    public boolean checkWinConditions(Player player) {
+        boolean result = false;
+        for (List el : this.winningPositions) {
+            if (player.getPositions().containsAll(el)) {
+                result = true;
+                break;
+            }
+        }
+        return result;
+    }
 }

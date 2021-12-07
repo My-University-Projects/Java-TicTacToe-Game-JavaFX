@@ -9,18 +9,18 @@ import javafx.stage.Stage;
 import java.io.IOException;
 
 /**
- * JavaFX App
+ * JavaFX App class
  */
 public class App extends Application {
 
     /**
-     * 
+     * Field representanting a scene in App class
      */
     private static Scene mainMenuScene;
 ////////////////////////////////////////////////////////////////////////////////
     
     /**
-     * 
+     * GUI loading method
      * @param stage
      * @throws IOException 
      */
@@ -34,7 +34,7 @@ public class App extends Application {
     }
 
     /**
-     * 
+     * Seeting root method
      * @param fxml
      * @throws IOException 
      */
@@ -43,7 +43,7 @@ public class App extends Application {
     }
 
     /**
-     * 
+     * Loading FXML method
      * @param fxml
      * @return
      * @throws IOException 
@@ -54,7 +54,7 @@ public class App extends Application {
     }
 
     /**
-     * 
+     * Main method in App class
      * @param args 
      */
     public static void main(String[] args) {

@@ -2,16 +2,14 @@ package pl.polsl.tomasz.krypczyk.tictactoegame;
 
 import java.io.IOException;
 import java.net.URL;
-import static java.time.Clock.system;
 import java.util.List;
 import java.util.ResourceBundle;
-import java.util.concurrent.TimeUnit;
 import javafx.fxml.FXML;
 import javafx.fxml.Initializable;
 import javafx.scene.control.Button;
 import javafx.scene.control.Label;
 import javafx.scene.layout.AnchorPane;
-import pl.polsl.tomasz.krypczyk.tictactoe.game.model.Board;
+import pl.polsl.tomasz.krypczyk.tictactoegame.model.Board;
 import pl.polsl.tomasz.krypczyk.tictactoegame.model.ComputerPlayer;
 import pl.polsl.tomasz.krypczyk.tictactoegame.model.GameStatus;
 import pl.polsl.tomasz.krypczyk.tictactoegame.model.HumanPlayer;
@@ -19,7 +17,7 @@ import pl.polsl.tomasz.krypczyk.tictactoegame.model.Player;
 import pl.polsl.tomasz.krypczyk.tictactoegame.model.WinningConditions;
 
 /**
- * 
+ * Controller of the game class
  * @author Tomasz Krypczyk
  */
 public class GameController implements Initializable {
@@ -27,120 +25,120 @@ public class GameController implements Initializable {
     ////////////////////////////////////////////////////////////////////////////////
     
     /**
-     * 
+     * Label with first player name
      */
     @FXML
     private Label player1Label;
 
     /**
-     * 
+     * Label with first player wins counter
      */
     @FXML
     private Label player1WinsCountLabel;
 
     /**
-     * 
+     * Label with seconds player name
      */
     @FXML
     private Label player2Label;
 
     /**
-     * 
+     * Label with seconds player wins counter
      */
     @FXML
     private Label player2WinsCountLabel;
     
     /**
-     * 
+     * Label with actual round counter
      */
     @FXML
     private Label roundCountLabel;
     
     /**
-     * 
+     * Error Anchor Pane
      */
     @FXML
     private AnchorPane errorAnchorPane;
     
     /**
-     * 
+     * Label with error message
      */
     @FXML
     private Label errorMessageLabel;
     
     /**
-     * 
+     * Label with current player name
      */
     @FXML
     private Label currentPlayerLabel;
     
     /**
-     * 
+     * Label with message at the end of the game
      */
     @FXML
     private Label endGameMessageLabel;
     
     /**
-     * 
+     * End game anchor pane
      */
     @FXML
     private AnchorPane endGameAnchorPane;
     
     /**
-     * 
+     * Field of the tic tac toe board
      */
     @FXML
     private Button button1, button2, button3, button4, button5, button6, button7, button8, button9;
     
     /**
-     * 
+     * Objects representanting players in a game
      */
     private Player player1, player2;
     
     /**
-     * 
+     * String representanting players names
      */
     private static String player1Name, player2Name;
     
     /**
-     * 
+     * int representanting game mode(single player or solo player)
      */
     private static int gameMode;
     
     /**
-     * 
+     * Enum representanting acutal game status
      */
     private static GameStatus gameStatus;
     
     /**
-     * 
+     * Object representanting actual game board 
      */
     private Board board;
     
     /**
-     * 
+     *  Int representanting rounds count
      */
     private int roundCount;
     
     /**
-     * 
+     * int representanting actual player1(1 - first player, 2 - second player)
      */
     private int actualPlayer;
     
     /**
-     * 
+     * ints representaning wins counter for both players
      */
     private int player1WinsCounter, player2WinsCounter;
     
     /**
-     * 
+     * Object representanting winning condtions of the game
      */
     private WinningConditions winningConditions;
     
     /////////////////////////////////////////////BUTTONSCLICKED////////////////////////////////////////////////////
     
     /**
-     * 
+     * Buttons clicked method
      */
     @FXML
     private void button1Clicked() throws InterruptedException
@@ -150,7 +148,7 @@ public class GameController implements Initializable {
     }
     
     /**
-     * 
+     * Buttons clicked method
      */
     @FXML
      private void button2Clicked() throws InterruptedException
@@ -160,7 +158,7 @@ public class GameController implements Initializable {
     } 
      
     /**
-     * 
+     * Buttons clicked method
     */
      @FXML
      private void button3Clicked() throws InterruptedException
@@ -170,7 +168,7 @@ public class GameController implements Initializable {
     }
      
     /**
-     * 
+     * Buttons clicked method
     */
      @FXML
      private void button4Clicked() throws InterruptedException
@@ -180,7 +178,7 @@ public class GameController implements Initializable {
     }
      
     /**
-     * 
+     * Buttons clicked method
     */
      @FXML
      private void button5Clicked() throws InterruptedException
@@ -190,7 +188,7 @@ public class GameController implements Initializable {
     }
      
     /**
-     * 
+     * Buttons clicked method
     */
      @FXML
      private void button6Clicked() throws InterruptedException
@@ -200,7 +198,7 @@ public class GameController implements Initializable {
     }
      
     /**
-     * 
+     * Buttons clicked method
     */
      @FXML
      private void button7Clicked() throws InterruptedException
@@ -210,7 +208,7 @@ public class GameController implements Initializable {
     }
      
     /**
-     * 
+     * Buttons clicked method
     */
      @FXML
      private void button8Clicked() throws InterruptedException
@@ -220,7 +218,7 @@ public class GameController implements Initializable {
     }
      
     /**
-     * 
+     * Buttons clicked method
     */
      @FXML
      private void button9Clicked() throws InterruptedException
@@ -230,7 +228,7 @@ public class GameController implements Initializable {
     }
      
      /**
-      * 
+      * error message accept button clicked method
       */
      @FXML
      private void errorMessageButtonClicked()
@@ -238,6 +236,9 @@ public class GameController implements Initializable {
          this.errorAnchorPane.setVisible(false);
      }
      
+     /**
+      * Next game request button clicked method
+      */
      @FXML
      private void nextGameButtonClicked()
      {
@@ -246,18 +247,23 @@ public class GameController implements Initializable {
          this.startNewGame();
      }
      
+     /**
+      * Back to main menu method
+      * @throws IOException when main menu fxml is not found
+      */
      @FXML
      private void backToMenuButtonClicked() throws IOException
      {
          this.clearView();
-         this.switchToPrimary();
+         this.switchToMainMenu();
      }
     
     ////////////////////////////////////////////SETTERS AND GETTERS//////////////////////////////////////////////////
     
     /**
+     * Setter of first player name
+     * @param name of the player
      * 
-     * @param name 
      */
     public void setPlayer1Name(String name)
     {
@@ -265,8 +271,8 @@ public class GameController implements Initializable {
     }
     
     /**
-     * 
-     * @param name 
+     * Setter of second player name
+     * @param name of the second player
      */
     public void setPlayer2Name(String name)
     {
@@ -274,17 +280,17 @@ public class GameController implements Initializable {
     }
     
     /**
-     * 
-     * @param gameMode 
+     * Game mode setter
+     * @param gameMode current game mode 
      */
     public void setGameMode(int gameMode)
     {
         GameController.gameMode = gameMode;
     }
     
-        /**
-     * 
-     * @param message 
+     /**
+     *  setter of the error message text in the error Anchor pane
+     * @param message sent to te textfield
      */
     private void setErrorMessagePane(String message)
     {
@@ -293,8 +299,8 @@ public class GameController implements Initializable {
     }
     
     /**
-     * 
-     * @param message 
+     * Setter of the message at the end of the game Anchor pane
+     * @param message sent to the textfield
      */
     private void setEndGameAnchorPane(String message)
     {
@@ -305,7 +311,7 @@ public class GameController implements Initializable {
     //////////////////////////////////////////////////////////////////////////////////////////////
     
     /**
-     * 
+     * Initializing method
      * @param url
      * @param rb 
      */
@@ -318,11 +324,11 @@ public class GameController implements Initializable {
     }
     
     /**
-     * 
-     * @throws IOException 
+     * Switching to main menu method
+     * @throws IOException  when main menu FXML is not found
      */
     @FXML
-    private void switchToPrimary() throws IOException 
+    private void switchToMainMenu() throws IOException 
     {
         App.setRoot("MainMenu");
     }  
@@ -349,7 +355,7 @@ public class GameController implements Initializable {
     }
    
     /**
-     * 
+     * Method that creates Single player game 
      * 
      */
     private void createSingleplayerGame()
@@ -359,7 +365,7 @@ public class GameController implements Initializable {
     }
     
     /**
-     * 
+     * Method that creates multi player game 
      * 
      */
     private void createMultiplayerGame()
@@ -387,8 +393,7 @@ public class GameController implements Initializable {
     
     /**
      * startNewGame is responsible for all actions made by players during the game,
- catching errors and chose the winner of the game
-     *
+     * catching errors and chose the winner of the game
      */
     public void startNewGame()
     {
@@ -404,9 +409,10 @@ public class GameController implements Initializable {
     }
     
     /**
-     * 
-     * @param button
-     * @param position 
+     * method that saves actual player move
+     * @param button clicked by the player
+     * @param position of the clicked button
+     * @throws java.lang.InterruptedException 
      */
     public void saveMove(Button button, int position) throws InterruptedException
     {
@@ -419,7 +425,7 @@ public class GameController implements Initializable {
                     if(monitorMove(player1, board, position) == true)
                     {
                         button.setText(Character.toString(player1.getSign()));
-                        if (checkWinConditions(player1, winningConditions) == true) 
+                        if (winningConditions.checkWinConditions(player1) == true) 
                         {
                             String message = "Wygrał " + player1.getPlayerName() + "!";
                             this.player1WinsCounter++;
@@ -435,20 +441,21 @@ public class GameController implements Initializable {
                         String message = "Wybrałeś zajętą pozycję! Spróbuj jeszcze raz.";
                         this.setErrorMessagePane(message);
                     }
-                    if(player2 instanceof ComputerPlayer == true  && didMove == true)
+                    //TimeUnit.MILLISECONDS.sleep(500);
+                    if(player2 instanceof ComputerPlayer == true  && didMove == true && roundCount < 9)
                     {
-                        //TimeUnit.MILLISECONDS.sleep(500);
+                        
                         while (true)
                         {
                             int intPosition = 1 + (int) (Math.random() * 9);
-                            if (this.updateBoard(board, player2, intPosition) == true) 
+                            if (board.updateBoard(player2, intPosition) == true) 
                             {
                                 addPlayerPosition(player2, intPosition);
                                 this.setCpusSign(player2.getSign(), intPosition);
                                 break;
                             }
                         }
-                        if (checkWinConditions(player2, winningConditions) == true)
+                        if (winningConditions.checkWinConditions(player2) == true)
                             {
                                 String message = "Wygrał " + player2.getPlayerName() + "!";
                                 this.player2WinsCounter++;
@@ -464,7 +471,7 @@ public class GameController implements Initializable {
                         if(monitorMove(player2, board, position) == true)
                         {
                             button.setText(Character.toString(player2.getSign()));
-                            if (checkWinConditions(player2, winningConditions) == true)
+                            if (winningConditions.checkWinConditions(player2) == true)
                             {
                                 String message = "Wygrał " + player2.getPlayerName() + "!";
                                 this.player2WinsCounter++;
@@ -491,9 +498,9 @@ public class GameController implements Initializable {
     }
     
     /**
-     * 
-     * @param sign
-     * @param position 
+     * Method that manages cpu move
+     * @param sign of the cpu
+     * @param position chosen by the cpu
      */
     public void setCpusSign(char sign, int position)
     {
@@ -548,9 +555,9 @@ public class GameController implements Initializable {
     }
     
     /**
-     * 
-     * @param player
-     * @param roundCount 
+     * Method that updates view
+     * @param player actual player
+     * @param roundCount actual round
      */
     private void updateView(Player player, int roundCount)
     {
@@ -559,7 +566,7 @@ public class GameController implements Initializable {
     }
     
     /**
-     * 
+     * Method that clears view
      */
     private void clearView()
     {
@@ -582,17 +589,17 @@ public class GameController implements Initializable {
     }
     
     /**
-     * 
-     * @param player 
+     * Method that clears players positions list
+     * @param player which positions list will be cleared
      */
-    public void clearPositionsList(Player player) {
+    public void clearPositionsList(Player player)
+    {
         player.clearPositions();
     }
     
      /**
-     * monitorMove is responsible actions related to moves made by the players and
- checking correctness of these moves
-     *
+     * monitorMove is responsible actions related to moves made by the players and 
+     * checking correctness of these moves
      * @param player actual player
      * @param board game board
      * @param position
@@ -600,7 +607,7 @@ public class GameController implements Initializable {
      */
     public boolean monitorMove(Player player, Board board, int position) 
     {
-        if (this.updateBoard(board, player, position) == true) 
+        if (board.updateBoard(player, position) == true) 
         {
             this.addPlayerPosition(player, position);
             return true;
@@ -613,119 +620,10 @@ public class GameController implements Initializable {
     
     /**
      * addPlayerPosition adds a position to list of actual player position
-     *
      * @param player that made a move
      * @param position that player has put sign on
      */
     public void addPlayerPosition(Player player, int position) {
         player.addPosition(position);
-    }
-    
-    /**
-     * updateBoard puts on a board sign in the chosen by player position
-     *
-     * @param board game board
-     * @param player actual player
-     * @param el chosen by the player board element
-     * @return boolean if update has been finished succesful
-     */
-    public boolean updateBoard(Board board, Player player, int el) {
-        boolean result;
-        int row, column;
-        if (el <= 3 && el >= 1) {
-            row = 0;
-            column = this.calculateColumn(el);
-            if (checkIfEmpty(board.getBoard()[row][column]) == true) {
-                board.getBoard()[row][column] = player.getSign();
-                result = true;
-            } else {
-                result = false;
-            }
-        } else if (el <= 6 && el >= 4) {
-            row = 2;
-            column = this.calculateColumn(el);
-            if (checkIfEmpty(board.getBoard()[row][column]) == true) {
-                board.getBoard()[row][column] = player.getSign();
-                result = true;
-            } else {
-                result = false;
-            }
-        } else if (el <= 9 && el >= 7) {
-            row = 4;
-            column = this.calculateColumn(el);
-            if (checkIfEmpty(board.getBoard()[row][column]) == true) {
-                board.getBoard()[row][column] = player.getSign();
-                result = true;
-            } else {
-                result = false;
-            }
-        } else {
-            result = false;
-        }
-        return result;
-    }
-    
-    /**
-     * calculateColumn calculates depending on chosen by the player position
-     *
-     * @param position that players wants to put sign on
-     * @return int the column on the game board
-     */
-    public int calculateColumn(int position) {
-
-        int column;
-        column = switch (position) {
-            case 1 ->
-                0;
-            case 2 ->
-                2;
-            case 3 ->
-                4;
-            case 4 ->
-                0;
-            case 5 ->
-                2;
-            case 6 ->
-                4;
-            case 7 ->
-                0;
-            case 8 ->
-                2;
-            case 9 ->
-                4;
-            default ->
-                -1;
-        };
-        return column;
-    }
-    
-    /**
-     * checkIfEmpty checks that actual position is avaible for player to put
-     * sign on
-     *
-     * @param position that players wants to put sign on
-     * @return boolean true if positon is empty
-     */
-    public boolean checkIfEmpty(char position) {
-        return position == ' ';
-    }
-    
-    /**
-     * checkWinConditions checks that actual player sign positions are winning
-     * positions
-     *
-     * @param player actual player
-     * @param winningConditions list of the winning positions
-     * @return boolean if positions of actual player meet the winning conditions
-     */
-    public boolean checkWinConditions(Player player, WinningConditions winningConditions) {
-        boolean result = false;
-        for (List el : winningConditions.getWinningPositions()) {
-            if (player.getPositions().containsAll(el)) {
-                result = true;
-                break;
-            }
-        }
-        return result;
     }
 }

@@ -1,7 +1,3 @@
-/*
- * Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
- * Click nbfs://nbhost/SystemFileSystem/Templates/javafx/FXMLController.java to edit this template
- */
 package pl.polsl.tomasz.krypczyk.tictactoegame;
 
 import java.io.IOException;
@@ -16,43 +12,42 @@ import javafx.scene.layout.AnchorPane;
 import pl.polsl.tomasz.krypczyk.tictactoegame.exception.TooLongNameException;
 
 /**
- * FXML Controller class
- *
- * @author ASUS
+ * Prepare to multi player game Controller class
+ * @author Tomasz Krypczyk
  */
 public class PrepareToMultiplayerGameController implements Initializable {
 
      //////////////////////////////////////////////////////////////////////////////////////////////
-    /**
-     * 
+     /**
+     * Textfield with first player name
      */
     @FXML
     TextField firstPlayerNameTextField;
     
     /**
-     * 
+     * Textfield with second player name
      */
     @FXML
     TextField secondPlayerNameTextField;
     
     /**
-     * 
+     * Pane with too Long name error message
      */
     @FXML
     AnchorPane tooLongNameAnchorPane;
     
     /**
-     * 
+     * String with first player name
      */
     String firstPlayerName;
     
     /**
-     * 
+     * String with second player name
      */
     String secondPlayerName;
     
     /**
-     * 
+     * Int representanting actual game mode
      */
     int gameMode;
     
@@ -60,6 +55,8 @@ public class PrepareToMultiplayerGameController implements Initializable {
     
     /**
      * Initializes the controller class.
+     * @param url
+     * @param rb
      */
     @Override
     public void initialize(URL url, ResourceBundle rb) {
@@ -67,7 +64,7 @@ public class PrepareToMultiplayerGameController implements Initializable {
     }    
     
     /**
-     * 
+     * Method that switched root to gsme controller
      * @throws IOException 
      */
      @FXML
@@ -77,7 +74,7 @@ public class PrepareToMultiplayerGameController implements Initializable {
     }
     
     /**
-     * 
+     * Method that takes first player name from the text field
      */
     @FXML
     private void takeFirstPlayerNameButtonClicked() throws TooLongNameException, IOException
@@ -99,7 +96,7 @@ public class PrepareToMultiplayerGameController implements Initializable {
     }
     
     /**
-     * 
+     * Method that takes second player name from the textfield
      */
     @FXML
     private void takeSecondPlayerNameButtonClicked() throws TooLongNameException, IOException
@@ -121,7 +118,7 @@ public class PrepareToMultiplayerGameController implements Initializable {
     }
     
     /**
-     * 
+     * Method activated when players name is too long
      */
     @FXML
     private void tooLongNameButtonClicked()
@@ -130,7 +127,7 @@ public class PrepareToMultiplayerGameController implements Initializable {
     }
     
     /**
-     * 
+     * Starting game method
      * @throws IOException 
      */
      @FXML
@@ -141,7 +138,7 @@ public class PrepareToMultiplayerGameController implements Initializable {
     }
     
     /**
-     * 
+     * Method that passes names of the players and game mode to gsme controller
      * @throws IOException 
      */
     void passNamesToGameController() throws IOException

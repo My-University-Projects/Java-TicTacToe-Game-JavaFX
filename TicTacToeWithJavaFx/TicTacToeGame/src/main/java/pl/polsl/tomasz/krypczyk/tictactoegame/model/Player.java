@@ -1,7 +1,3 @@
-/*
- * Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
- * Click nbfs://nbhost/SystemFileSystem/Templates/Classes/Class.java to edit this template
- */
 package pl.polsl.tomasz.krypczyk.tictactoegame.model;
 
 import java.util.ArrayList;
@@ -90,5 +86,25 @@ public abstract class Player {
     public void addPosition(int position) {
         this.playerPositions.add(position);
     }
-
+    
+    /**
+     * monitorMove is responsible actions related to moves made by the players and 
+     * checking correctness of these moves
+     * @param board game board
+     * @param position
+     * @return 
+     */
+    public boolean monitorMove(Board board, int position) 
+    {
+        if (board.updateBoard(this, position) == true) 
+        {
+            this.addPosition(position);
+            return true;
+        }
+        else
+        {
+           return false;
+        }
+    }
+    
 }

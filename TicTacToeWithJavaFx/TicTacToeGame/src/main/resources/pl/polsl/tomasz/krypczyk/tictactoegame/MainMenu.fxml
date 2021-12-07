@@ -49,7 +49,7 @@
             <Font name="Georgia" size="28.0" />
          </font>
       </Button>
-      <Button layoutX="264.0" layoutY="417.0" mnemonicParsing="false" prefHeight="80.0" prefWidth="270.0" style="-fx-border-color: black; -fx-border-width: 8;" stylesheets="@styles/Style.css" text="Wyjście">
+      <Button layoutX="264.0" layoutY="417.0" mnemonicParsing="false" onAction="#leaveGame" prefHeight="80.0" prefWidth="270.0" style="-fx-border-color: black; -fx-border-width: 8;" stylesheets="@styles/Style.css" text="Wyjście">
          <font>
             <Font name="Georgia" size="28.0" />
          </font>

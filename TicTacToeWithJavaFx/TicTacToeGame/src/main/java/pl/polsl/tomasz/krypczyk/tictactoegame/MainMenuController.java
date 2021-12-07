@@ -6,10 +6,14 @@ import javafx.fxml.FXMLLoader;
 import javafx.scene.Parent;
 import pl.polsl.tomasz.krypczyk.tictactoegame.exception.TooLongNameException;
 
+/**
+ * Class representanting controller of main menu view
+ * @author Tomasz Krypczyk
+ */
 public class MainMenuController {
       
     /**
-     * 
+     * Method that switches to single game preparing controller
      * @throws IOException 
      */
     @FXML
@@ -18,7 +22,7 @@ public class MainMenuController {
     }
     
     /**
-     * 
+     *  FXML load method
      * @param fxml
      * @return
      * @throws IOException 
@@ -29,17 +33,17 @@ public class MainMenuController {
     }
     
     /**
-     * 
-     * @throws IOException 
+     * Method that switches to multi player game preparing controller
+     * @throws IOException when fxml not found
      */
     private void switchToMultiPlsyerGameController() throws IOException{
         App.setRoot("PrepareToMultiPlayerGame");
     }
     
     /**
-     * 
-     * @throws TooLongNameException
-     * @throws IOException 
+     * method that starts when solo player game button is clicked
+     * @throws TooLongNameException when players name is too long
+     * @throws IOException  when fxml is not found
      */
     @FXML private void soloPlayerGameClicked() throws TooLongNameException, IOException
     {
@@ -47,9 +51,9 @@ public class MainMenuController {
     }
     
     /**
-     * 
-     * @throws TooLongNameException
-     * @throws IOException 
+     * method that starts when multi player game button is clicked
+     * @throws TooLongNameException when the names is too long
+     * @throws IOException when fxml is not founs
      */
     @FXML
     private void multiplayerGameClicked() throws TooLongNameException, IOException
@@ -57,4 +61,9 @@ public class MainMenuController {
         this.switchToMultiPlsyerGameController();      
     }
  
+    @FXML
+    private void leaveGame()
+    {
+        System.exit(0);
+    }
 }

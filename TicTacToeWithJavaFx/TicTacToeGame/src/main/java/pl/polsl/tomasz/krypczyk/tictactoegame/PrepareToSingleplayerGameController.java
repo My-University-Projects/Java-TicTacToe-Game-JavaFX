@@ -11,9 +11,8 @@ import javafx.scene.control.TextField;
 import javafx.scene.layout.AnchorPane;
 import pl.polsl.tomasz.krypczyk.tictactoegame.exception.TooLongNameException;
 
-/**
- * FXML Controller class
- *
+ /**
+ * Prepare to single game Controller class 
  * @author Tomasz Krypczyk
  */
 public class PrepareToSingleplayerGameController implements Initializable {
@@ -21,30 +20,30 @@ public class PrepareToSingleplayerGameController implements Initializable {
     //////////////////////////////////////////////////////////////////////////////////////////////
     
      /**
-     * 
+     * Int with actual game mode
      */
     int gameMode;
     
     /**
-     * 
+     * String with player name
      */
     String playerName;
     
     /**
-     * 
+     * TextField with player name
      */
     @FXML
     TextField firstPlayerNameTextField;
     
     /**
-     * 
+     * Pane with error messagge 
      */
     @FXML
     AnchorPane tooLongNameAnchorPane;
     
      ///////////////////////////////////////////SETTERS AND GETTERS///////////////////////////////////////////////////
     /**
-     * 
+     * Getter of the player name
      * @return players name
      */
     public String getPlayerName()
@@ -55,7 +54,7 @@ public class PrepareToSingleplayerGameController implements Initializable {
      //////////////////////////////////////////////////////////////////////////////////////////////
     
     /**
-     * 
+     * Initializing method
      * @param url
      * @param rb 
      */
@@ -65,7 +64,7 @@ public class PrepareToSingleplayerGameController implements Initializable {
     }
     
     /**
-     * 
+     * MEthod that switched root to game controller
      * @throws IOException 
      */
     @FXML
@@ -75,7 +74,7 @@ public class PrepareToSingleplayerGameController implements Initializable {
     }
 
     /**
-     * 
+     * Method that takes player name from the textfield
      * @throws TooLongNameException
      * @throws IOException 
      */
@@ -100,7 +99,7 @@ public class PrepareToSingleplayerGameController implements Initializable {
     }
     
     /**
-     * 
+     * Method that hides arror anchor pane
      */
     @FXML
     private void tooLongNameButtonClicked()
@@ -109,7 +108,7 @@ public class PrepareToSingleplayerGameController implements Initializable {
     }
     
     /**
-     * 
+     * Method that starts actual game
      * @throws IOException 
      */
     @FXML
@@ -119,6 +118,10 @@ public class PrepareToSingleplayerGameController implements Initializable {
        this.switchToGameController();
     }
     
+    /**
+     * MEthod that passes players name and game mode to game controller
+     * @throws IOException 
+     */
     void passDataToGameController() throws IOException
     {
        FXMLLoader loader = new FXMLLoader(App.class.getResource("Game.fxml"));

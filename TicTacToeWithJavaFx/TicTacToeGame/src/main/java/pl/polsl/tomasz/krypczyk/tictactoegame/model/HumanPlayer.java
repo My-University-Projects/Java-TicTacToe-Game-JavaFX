@@ -16,5 +16,6 @@ public class HumanPlayer extends Player {
     public HumanPlayer(String argName, char argSign) {
         super(argName, argSign);
     }
+    
 
 }
