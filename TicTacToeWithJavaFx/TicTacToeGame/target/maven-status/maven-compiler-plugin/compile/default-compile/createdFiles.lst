@@ -1,8 +1,14 @@
 pl\polsl\tomasz\krypczyk\tictactoegame\model\GameStatus.class
+pl\polsl\tomasz\krypczyk\tictactoegame\model\TopPlayersList.class
 pl\polsl\tomasz\krypczyk\tictactoegame\model\Player.class
+pl\polsl\tomasz\krypczyk\tictactoegame\PrepareToMultiplayerGameController.class
+pl\polsl\tomasz\krypczyk\tictactoegame\GameController.class
 pl\polsl\tomasz\krypczyk\tictactoegame\model\ComputerPlayer.class
-pl\polsl\tomasz\krypczyk\tictactoegame\model\HumanPlayer.class
 pl\polsl\tomasz\krypczyk\tictactoegame\exception\TooLongNameException.class
 module-info.class
-pl\polsl\tomasz\krypczyk\tictactoe\game\model\Board.class
+pl\polsl\tomasz\krypczyk\tictactoegame\model\Board.class
 pl\polsl\tomasz\krypczyk\tictactoegame\model\WinningConditions.class
+pl\polsl\tomasz\krypczyk\tictactoegame\MainMenuController.class
+pl\polsl\tomasz\krypczyk\tictactoegame\PrepareToSingleplayerGameController.class
+pl\polsl\tomasz\krypczyk\tictactoegame\App.class
+pl\polsl\tomasz\krypczyk\tictactoegame\model\GameMode.class

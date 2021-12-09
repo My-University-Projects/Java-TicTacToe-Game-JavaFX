@@ -11,8 +11,6 @@ public class WinningConditionsTest {
     
     public WinningConditionsTest() {
     }
-
-    
     /**
      * Test of checkWinConditions method, of class WinningConditions.
      */

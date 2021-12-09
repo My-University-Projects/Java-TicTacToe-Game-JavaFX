@@ -11,9 +11,9 @@ public abstract class Player {
 
     /**
      *
-     * String name contains a player name
+     * String playerName contains a player playerName
      */
-    String name;
+    protected String playerName;
 
     /**
      *
@@ -30,23 +30,23 @@ public abstract class Player {
     /**
      * Player constructor
      *
-     * @param argName players name
+     * @param argName players playerName
      * @param argSign players sign on the board
      */
     public Player(String argName, char argSign) {
-        this.name = argName;
+        this.playerName = argName;
         this.sign = argSign;
         this.playerPositions = new ArrayList<>();
     }
 
     /**
      *
-     * getPlayerName gets a players name
+     * getPlayerName gets a players playerName
      *
-     * @return String players name
+     * @return String players playerName
      */
     public String getPlayerName() {
-        return this.name;
+        return this.playerName;
     }
 
     /**
@@ -67,6 +67,14 @@ public abstract class Player {
      */
     public ArrayList<Integer> getPositions() {
         return this.playerPositions;
+    }
+    
+    /**
+     * Setter of players playerName
+     * @param name 
+     */
+    public void setPlayerName(String name){
+        this.playerName = name;
     }
 
     /**

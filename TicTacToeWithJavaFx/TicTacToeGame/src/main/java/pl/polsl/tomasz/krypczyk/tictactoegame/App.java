@@ -27,6 +27,7 @@ public class App extends Application {
     @Override
     public void start(Stage stage) throws IOException {
         
+        stage.setTitle("Kółko i krzyżyk");
         mainMenuScene = new Scene(loadFXML("MainMenu"), 800, 600);
         stage.setScene(mainMenuScene);
         stage.show();
@@ -49,6 +50,7 @@ public class App extends Application {
      * @throws IOException 
      */
     private static Parent loadFXML(String fxml) throws IOException {
+        //FXMLLoader fxmlLoader = new FXMLLoader(App.class.getResource( fxml + ".fxml"));
         FXMLLoader fxmlLoader = new FXMLLoader(App.class.getResource(fxml + ".fxml"));
         return fxmlLoader.load();
     }
