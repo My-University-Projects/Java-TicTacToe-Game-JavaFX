@@ -44,17 +44,17 @@
             <Font name="Georgia" size="70.0" />
          </font>
       </Text>
-      <Button layoutX="264.0" layoutY="157.0" mnemonicParsing="false" onAction="#soloPlayerGameClicked" prefHeight="80.0" prefWidth="270.0" style="-fx-border-color: black; -fx-border-width: 8;" stylesheets="@styles/Style.css" text="Gra soloplayer">
+      <Button layoutX="264.0" layoutY="157.0" mnemonicParsing="false" onAction="#soloPlayerGameClicked" prefHeight="80.0" prefWidth="270.0" style="-fx-border-color: black; -fx-border-width: 8; -fx-border-radius: 20; -fx-background-radius: 25;" stylesheets="@styles/Style.css" text="Gra soloplayer">
          <font>
             <Font name="Georgia" size="28.0" />
          </font>
       </Button>
-      <Button layoutX="264.0" layoutY="417.0" mnemonicParsing="false" onAction="#leaveGame" prefHeight="80.0" prefWidth="270.0" style="-fx-border-color: black; -fx-border-width: 8;" stylesheets="@styles/Style.css" text="Wyjście">
+      <Button layoutX="264.0" layoutY="417.0" mnemonicParsing="false" onAction="#leaveGame" prefHeight="80.0" prefWidth="270.0" style="-fx-border-color: black; -fx-border-width: 8; -fx-background-radius: 25; -fx-border-radius: 20;" stylesheets="@styles/Style.css" text="Wyjście">
          <font>
             <Font name="Georgia" size="28.0" />
          </font>
       </Button>
-      <Button layoutX="264.0" layoutY="288.0" mnemonicParsing="false" onAction="#multiplayerGameClicked" prefHeight="80.0" prefWidth="270.0" style="-fx-border-color: black; -fx-border-width: 8;" stylesheets="@styles/Style.css" text="Gra multiplayer">
+      <Button layoutX="264.0" layoutY="288.0" mnemonicParsing="false" onAction="#multiplayerGameClicked" prefHeight="80.0" prefWidth="270.0" style="-fx-border-color: black; -fx-border-width: 8; -fx-background-radius: 25; -fx-border-radius: 20;" stylesheets="@styles/Style.css" text="Gra multiplayer">
          <font>
             <Font name="Georgia" size="28.0" />
          </font>

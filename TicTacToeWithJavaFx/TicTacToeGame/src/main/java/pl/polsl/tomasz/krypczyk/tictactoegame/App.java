@@ -7,6 +7,7 @@ import javafx.scene.Scene;
 import javafx.stage.Stage;
 
 import java.io.IOException;
+import java.net.URL;
 
 /**
  * JavaFX App class
@@ -39,7 +40,7 @@ public class App extends Application {
      * @param fxml
      * @throws IOException 
      */
-    static void setRoot(String fxml) throws IOException {
+    static public void setRoot(String fxml) throws IOException {
         mainMenuScene.setRoot(loadFXML(fxml));
     }
 
@@ -50,8 +51,8 @@ public class App extends Application {
      * @throws IOException 
      */
     private static Parent loadFXML(String fxml) throws IOException {
-        //FXMLLoader fxmlLoader = new FXMLLoader(App.class.getResource( fxml + ".fxml"));
-        FXMLLoader fxmlLoader = new FXMLLoader(App.class.getResource(fxml + ".fxml"));
+        FXMLLoader fxmlLoader = new FXMLLoader(App.class.getResource( fxml + ".fxml"));
+       // FXMLLoader fxmlLoader = new FXMLLoader(url);
         return fxmlLoader.load();
     }
 

@@ -113,13 +113,13 @@ public class GameController implements Initializable {
     private Button button1, button2, button3, button4, button5, button6, button7, button8, button9;
     
     /**
-     * 
+     * object representanting closing table of the to players button
      */
     @FXML
     private Button closeTableButton;
     
     /**
-     * 
+     * object representanting open top players table button
      */
     @FXML
     private Button showTopPlayersButton;
@@ -172,7 +172,7 @@ public class GameController implements Initializable {
     /**
      * object representanting top players list
      */
-    private TopPlayersList top10;
+    private TopPlayersList topPlayers;
 
     /////////////////////////////////////////////BUTTONSCLICKED////////////////////////////////////////////////////
     /**
@@ -281,7 +281,7 @@ public class GameController implements Initializable {
      */
     @FXML
     private void backToMenuButtonClicked() throws IOException {
-        this.top10.saveListToFile();
+        this.topPlayers.saveListToFile();
         this.clearView();
         this.switchToMainMenu();
     }
@@ -380,8 +380,8 @@ public class GameController implements Initializable {
         this.player1WinsCounter = 0;
         this.player1WinsCounter = 0;
         GameController.gameStatus = GameStatus.InGame;
-        this.top10 = new TopPlayersList();
-        top10.loadListfromFile(); 
+        this.topPlayers = new TopPlayersList();
+        topPlayers.loadListfromFile(); 
         this.PlayerNameColumn.setCellValueFactory(new PropertyValueFactory<>("playerName"));
         this.PlayerScoreColumn.setCellValueFactory(new PropertyValueFactory<>("playerScore"));
         this.updateTable();
@@ -455,8 +455,9 @@ public class GameController implements Initializable {
                         if (winningConditions.checkWinConditions(player1) == true) {
                             String message = "Wygrał " + player1.getPlayerName() + "!";
                             this.player1WinsCounter++;
-                            this.top10.addPlayerToList(player1Name);
+                            this.topPlayers.addPlayerToList(player1Name);
                             this.TopPlayersTable.refresh();                 ////////////////////////////////////////////////////
+                            //this.updateTable();
                             this.setEndGameAnchorPane(message);
                         }
                         this.roundCount++;
@@ -494,8 +495,9 @@ public class GameController implements Initializable {
                         if (winningConditions.checkWinConditions(player2) == true) {
                             String message = "Wygrał " + player2.getPlayerName() + "!";
                             this.player2WinsCounter++;
-                            this.top10.addPlayerToList(player2Name);
+                            this.topPlayers.addPlayerToList(player2Name);
                             this.TopPlayersTable.refresh();             ////////////////////////////////////////////// test
+                            //this.updateTable();
                             this.setEndGameAnchorPane(message);
                         }
                         this.roundCount++;
@@ -506,6 +508,7 @@ public class GameController implements Initializable {
                         this.setErrorMessagePane(message);
                     }
                 }
+
             }
         } else {
             String message = "Mamy remis!";
@@ -637,7 +640,7 @@ public class GameController implements Initializable {
     private void updateTable()
     {
         
-        for(var el : this.top10.getTopPlayers()){
+        for(var el : this.topPlayers.getTopPlayers()){
             this.TopPlayersTable.getItems().add(el);
         }
     }
