@@ -1,4 +1,0 @@
---patch-module
-pl.polsl.tomasz.krypczyk.tictactoegame=_
---add-reads
-pl.polsl.tomasz.krypczyk.tictactoegame=ALL-UNNAMED
