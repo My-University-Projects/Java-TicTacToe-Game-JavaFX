@@ -8,6 +8,8 @@
         <outputRelativeToContentRoot value="true" />
         <module name="Tic-Tac-Toe-JavaFX-Game" />
         <module name="Java_TicTacToe_game_Repo" />
+        <module name="Nowy folder" />
+        <module name="Java-TicTacToe-Game-JavaFX" />
       </profile>
     </annotationProcessing>
   </component>

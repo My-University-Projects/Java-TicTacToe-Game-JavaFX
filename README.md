@@ -1,3 +1,3 @@
 # Java-TicTacToe-Game
 
-Simple tic tac toe game written in Java and JavaFX
+Simple console tic tac toe game written in java
