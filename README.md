@@ -1,4 +1,4 @@
-# Java-TicTacToe-Game
+# Java-Tic-Tac-Toe-Game
 
 ### Simple tic tac toe game written in Java MVC model with JavaFX and Scene Builder
 
